@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combinators Mini Project</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Sora:wght@100..800&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /** CSS combinators are used to define relationships between different elements in your HTML document. They allow you to target elements based on their position and hierarchy within the document structure.  */
+
+        /*? Descendant Selector (Space): Selects an element that is a descendant of another element. */
+
+        /*? Child Selector (>): Selects an element that is a direct child of another element. */
+
+        /*? Adjacent Sibling Selector (+): Selects an element that is immediately preceded by another element. */
+
+        /*? General Sibling Selector (~): Selects all elements that are siblings of another element and share the same parent. */
+
+        /*? Universal Selector (*): Selects all elements. */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Zilla Slab", serif;
+        }
+
+        body {
+            /* color: azure; */
+            /* height: 100vh; */
+        }
+
+        /* #loding {
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            z-index: 99999;
+            background-color: #ffffff;
+        }
+
+        .spinner {
+            width: 56px;
+            height: 56px;
+            display: grid;
+            border: 4.5px solid #0000;
+            border-radius: 50%;
+            border-color: #dbdcef #0000;
+            animation: spinner-e04l1k 1s infinite linear;
+        }
+
+        .spinner::before,
+        .spinner::after {
+            content: "";
+            grid-area: 1/1;
+            margin: 2.2px;
+            border: inherit;
+            border-radius: 50%;
+        }
+
+        .spinner::before {
+            border-color: #474bff #0000;
+            animation: inherit;
+            animation-duration: 0.5s;
+            animation-direction: reverse;
+        }
+
+        .spinner::after {
+            margin: 8.9px;
+        }
+
+        @keyframes spinner-e04l1k {
+            100% {
+                transform: rotate(1turn);
+            }
+        } */
+
+        #new-loding {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background: #ffffff url(../Images/Icon/Animation\ -\ 1731049626311.gif) no-repeat center;
+            z-index: 999999;
+        }
+
+        .hero-section {
+            /* background-color: #080a0c; */
+        }
+
+        .container {
+            height: 100vh;
+            padding: 64px 0;
+            margin: 0 auto;
+            display: grid;
+            align-items: center;
+        }
+
+        .section-elements {
+            /* padding-bottom: 100px; */
+        }
+
+        .section-elements .container {
+            height: auto;
+            /* background-color: #f5f5f5; */
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+            color: #080a0c;
+        }
+
+        .grid {
+            display: grid;
+            align-items: center;
+            gap: 6.4rem;
+        }
+
+        .grid-two-column {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .hero-content h1 {
+            text-align: left;
+            font-size: 54px;
+        }
+
+        .hero-content p {
+            letter-spacing: 1px;
+            margin: 2rem 0 4rem 0;
+        }
+
+        img {
+            max-width: 80%;
+            height: auto;
+        }
+
+        .hero-content a {
+            background-color: #fff;
+            display: inline-block;
+            padding: 10px 32px;
+            text-transform: capitalize;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 24px;
+            font-weight: bold;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -ms-border-radius: 5px;
+            -o-border-radius: 5px;
+        }
+
+        .content-1,
+        .content-2 {
+            text-align: center;
+            text-transform: capitalize;
+        }
+
+        li {
+            list-style: none;
+            font-size: 48px;
+        }
+
+        /** --------------------------------- */
+
+        .content-1 ul p {
+            font-weight: bold;
+            color: #023047;
+            font-size: 40px;
+            font-weight: 400;
+        }
+
+        .content-1 ul li {
+            color: #780000;
+            font-size: 34px;
+        }
+
+        .content-1>ul>li {
+            color: red;
+        }
+
+        .content-1 ul p+li {
+            color: #fb8500;
+        }
+
+        .content-1 ul p~li {
+            color: #4361ee;
+        }
+    </style>
+
+</head>
+
+
+<body onload="muFunction()">
+
+    <!-- <div id="loding">
+        <div class="spinner"></div>
+    </div> -->
+
+    <div id="new-loding"></div>
+
+    <section class="hero-section section-elements">
+        <div class="container">
+            <div class="grid grid-two-column">
+                <div class="content-1">
+                    <ul>
+                        <p>I am First - 1 </p>
+                        <li>inside</li>
+                        <li>inside
+                            <ol>
+                                <li>nested</li>
+                                <ul>
+                                    <li>deep nested</li>
+                                </ul>
+                                <li>nested</li>
+                            </ol>
+                        </li>
+                        <li>inside</li>
+                        <p>I am Last</p>
+                        <li>last child</li>
+                    </ul>
+                    <li>outside</li>
+                </div>
+                <div class="content-2">
+                    <ul class="testing">
+                        <li class="p-class">Home</li>
+                        <li class="p-class">About</li>
+                        <li class="p-class">Services</li>
+                        <li class="p-class">Gallery</li>
+                        <li class="p-class">contact</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+
+        var preloader = document.getElementById('new-loding');
+        function muFunction() {
+            preloader.style.display = 'none';
+        }
+
+    </script>
+
+</body>
+
+</html>

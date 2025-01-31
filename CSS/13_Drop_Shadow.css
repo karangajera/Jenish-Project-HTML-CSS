@@ -1,0 +1,66 @@
+/** ------------------------------------- -->
+/** DROP SHADOW - CSS3
+/** ---------------------------------------- --> 
+
+
+
+Drop shadow, often used for images, creates a shadow below the element, giving the illusion of it being lifted from the page.
+It is defined using the filter property with the drop-shadow function.
+The drop-shadow function accepts values for horizontal and vertical offsets, blur radius, and color.
+
+
+
+
+
+Two length values
+drop-shadow( <length> <length> )
+drop-shadow(5px 5px)
+
+
+
+Three length values
+drop-shadow( <length> <length> <length> )
+drop-shadow(5px 5px 15px)
+
+
+
+Two length values and a color
+drop-shadow( <length> <length> <color> )
+drop-shadow(5px 5px yellow)
+
+
+
+Three length values and a color
+drop-shadow( <length> <length> <length> <color> )
+drop-shadow(5px 5px 15px yellow)
+
+
+
+
+The order of color and length values can be changed
+drop-shadow( <color> <length> <length> <length> )
+drop-shadow(#e23 0.5rem 0.5rem 1rem)
+
+
+
+img {
+    -webkit-filter: drop-shadow(-10px 10px 0 #f90000);
+}
+
+
+
+div:nth-child(1) {
+  filter: drop-shadow(16px 16px);
+}
+
+div:nth-child(2) {
+  filter: drop-shadow(16px 16px red);
+}
+
+div:nth-child(3) {
+  filter: drop-shadow(red 1rem 1rem 10px);
+}
+
+div:nth-child(4) {
+  filter: drop-shadow(-16px -6px red);
+}

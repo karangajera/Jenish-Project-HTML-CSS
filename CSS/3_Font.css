@@ -1,0 +1,187 @@
+/*! ------------------------------------- -->
+/*!  UNITS IN CSS 
+/*! ---------------------------------------- -->
+
+
+/** Absolute Lengths:  The absolute length units are fixed and a length expressed in any of these will appear as exactly that size. */
+
+/** Relative Lengths: Relative length units specify a length relative to another length property. Relative length units scale better between different rendering medium. */
+
+
+/** => Absolute Lengths : */
+/*  cm => Centimeters
+    mm => Millimeters
+    Q => Quarter-millimeters	
+    in => Inches
+    pc => Picas
+    pt => Points
+    px => Pixels */
+
+
+
+/** => Relative Lengths : */
+/*  em => Relative to the font-size of the element (2em means 2 times the size of the current font)	
+    ex => Relative to the x-height of the current font (rarely used)	
+    ch => Relative to the width of the "0" (zero)	
+    rem	=> Relative to font-size of the root element	
+    vw => Relative to 1% of the width of the viewport*	
+    vh => Relative to 1% of the height of the viewport*	
+    vmin => Relative to 1% of viewport's* smaller dimension	
+    vmax => Relative to 1% of viewport's* larger dimension	
+    % => Relative to the parent element	 */
+
+
+/* ---------------------------------------------- EX -------------------------------------------------------- */
+
+
+/*& ( PX , VH , VW , REM , EM , % ) :- */
+
+/** => YouTube : https://youtu.be/APhPNDikwRE?si=H3eRZUpQIyj89IWY */
+
+.wrapper {
+    font-size: 1em;
+    /* 1em = 16px */
+}
+
+.em {
+    font-size: 10em;
+    /* 16px x 10em = 160em */
+}
+
+/* <div class="wrapper">
+    <div class="box px">I am 200px wide</div>
+    <div class="box vh">I am 10vh wide</div>
+    <div class="box em">I am 10em wide</div>
+</div> */
+
+
+/* ------------------------------------------------------------------------------------------------------ */
+
+
+/* Pixels (px): px is an absolute unit of measurement in CSS, representing the smallest unit of screen space.
+It provides a fixed and consistent size on all devices and screens. */
+
+
+/* Percentages (%): Percentages are relative units based on the parent element's size or the containing block.
+Widely used in creating responsive layouts.
+Example: width: 50%; sets an element's width to 50% of its parent's width. */
+
+
+/* Em (em): em is a relative unit that is calculated based on the font size of the parent element.
+When you set an element's size in em, it's relative to the font size of its nearest parent with a specified font size. */
+
+
+/* Root Em (rem): rem is also a relative unit like em, but it's based on the font size of the root (html) element.
+Using rem ensures that the size is consistent throughout the entire document, making it especially useful for responsive design. */
+
+
+
+
+
+/** ------------------------------------- -->
+/**  IMPORTANT TIPS + NOTES
+/** ---------------------------------------- -->
+
+px : provides fixed sizes and is not recommended for responsive design as it doesn't adapt to different screen sizes and font settings. However, it can be useful for precise control over small elements.
+
+em : is useful for relative sizing within the context of the parent element's font size. It allows for more flexible and scalable designs.
+
+rem : is the preferred choice for responsive design as it offers a consistent relative size based on the root font size. It's easier to maintain and provides better scalability.
+
+
+
+
+
+https://codebeautify.org/px-to-percent-converter
+
+
+1px - 6.25%
+1px - 0.0625em
+1px - 0.0625rem
+1px - 0.75pt
+
+
+h1 - 32px - 2em
+h2 - 24px - 1.5em
+h3 - 18.72px - 1.17em
+h4 - 16px - 1em
+h5 - 13.28px - 0.83em
+h6 - 10.72px - 0.67em
+
+
+1em - 16px
+
+
+
+/** ------------------------------------- -->
+/**  Shaddocck - Wordpress Font Size
+/** ---------------------------------------- -->
+
+h1 {
+    font-size - 64px
+    Line Height - 1.2
+    Letter Spacing - -0.015em
+    Margin Top - 0.67em
+    Margin Bottom - 0.67em
+}
+h2 {
+    font-size - 48px
+    Line Height - 1.2
+    Letter Spacing - -0.015em
+    Margin Top - 0em
+    Margin Bottom - 1.1em
+}
+h3 {
+    font-size - 36px
+    Line Height - 1.2
+    Letter Spacing - -0.015em
+    Margin Top - 1em
+    Margin Bottom - 1em
+}
+h4 {
+    font-size - 24px
+    Line Height - 1.2
+    Letter Spacing - -0.015em
+    Margin Top - 1.33em
+    Margin Bottom - 1.33em
+}
+h5 {
+    font-size - 20px
+    Line Height - 1.2
+    Letter Spacing - -0.015em
+    Margin Top - 1.64em
+    Margin Bottom - 1.64em
+}
+h5 {
+    font-size - 16px
+    Line Height - 1.2
+    Letter Spacing - -0.015em
+    Margin Top - 2.33em
+    Margin Bottom - 2.33em
+}
+
+
+
+/** ------------------------------------- -->
+/**  Responsiv Font
+/** ---------------------------------------- -->
+
+html {
+    font-size: 16px;
+    1rem   = 16px
+}
+
+h1 {
+    font-size: 1rem;s
+}
+
+
+
+
+/** ------------------------------------- -->
+/**  INTERVIEW QUESTIONS
+/** ---------------------------------------- -->
+
+1: What is the main difference between em and rem units in CSS?
+2: How does using rem units in your CSS benefit a responsive web design?  ⭐⭐⭐
+3: Can you explain how the font-size property in em units works when nested within parent elements with different font sizes?

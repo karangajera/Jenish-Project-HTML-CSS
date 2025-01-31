@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cemil</title>
+    <style>
+        .marquee {
+            overflow: hidden;
+            border-top: 1px solid #000;
+            border-bottom: 1px solid #000;
+            display: flex;
+            flex-direction: row-reverse;
+        }
+
+        .marquee h1 {
+            font-size: 5em;
+            white-space: nowrap;
+            text-transform: uppercase
+        }
+    </style>
+</head>
+
+<body>
+    <div class="marquee">
+        <h1>Nepal * Himalayas * Mountains * Everest</h1>
+    </div>
+
+    <script>
+        function Marquee(selector, speed) {
+            const parentSelector = document.querySelector(selector);
+            const clone = parentSelector.innerHTML;
+
+            parentSelector.insertAdjacentHTML('beforeend', clone);
+            parentSelector.insertAdjacentHTML('beforeend', clone);
+            const firstElement = parentSelector.children[0];
+            let i = 0;
+            setInterval(function () {
+                firstElement.style.marginRight = `-${i}px`;
+                if (i > firstElement.clientWidth) {
+                    i = 0;
+                }
+                i = i + speed;
+            }, 0);
+        }
+        window.addEventListener('load', Marquee('.marquee', 0.2))
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+/*! ------------------------------------- -->
+/*!  POSITION IN CSS  
+/*! ---------------------------------------- -->
+
+The position property in CSS is used to control the positioning of elements within a web page. It defines how an element should be placed relative to its normal position in the document flow or relative to its parent or containing elements.
+
+position: relative;
+Definition: Elements with position: relative; are positioned relative to their normal position in the document flow.
+
+New Properties Unlocked
+Properties: top, right, bottom, left: Offset the element from its normal position.
+
+
+position: absolute;
+Definition: Elements with position: absolute; are positioned relative to the nearest positioned ancestor or the initial containing block.
+
+
+.perent {
+    position: relative;
+    width: 100vh;
+    height: 100vh;
+}
+
+.child {
+    position: absolute;
+    
+}
+
+<div class="perent">
+    <div class="child">
+    
+    </div>
+</div>
+
+
+
+
+/*! ------------------------------------- -->
+/*!  POSITION STICKY IN CSS 
+/*! ---------------------------------------- -->
+
+Static (position: static;):
+This is the default value for all elements.
+
+Elements with position: static; are positioned according to the normal document flow.
+They are not affected by the top, right, bottom, or left properties.
+
+
+
+
+/*! ------------------------------------- -->
+/*!  POSITION FIXED IN CSS 
+/*! ---------------------------------------- -->
+
+Fixed (position: fixed;):
+Elements with position: fixed; are positioned relative to the viewport, so they remain in the same position even when the page is scrolled.
+You can use the top, right, bottom, and left properties to specify the exact position.
+
+Sticky (position: sticky;):
+Elements with position: sticky; are initially positioned according to the normal flow, but they become "sticky" and stay within the viewport once they reach a specified scroll position.
+You can use the top, right, bottom, and left properties to set the stickiness behavior.
+
+
+
+
+
+/** ------------------------------------- -->
+/**  POSITION INTERVIEW QUESTIONS IN CSS  
+/** ---------------------------------------- -->
+
+1: What is the default positioning of an element with position: absolute;? ⭐⭐
+By default, an element with position: absolute; is positioned at the top-left corner of its containing block without any offsets.
+
+
+2: How can you ensure that an element with position: absolute; is positioned relative to the entire viewport?
+To position an element with position: absolute; relative to the viewport, ensure that none of its ancestors have a position property set to relative, absolute, fixed, or sticky. This way, it will use the viewport as its containing block.

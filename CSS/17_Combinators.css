@@ -1,0 +1,108 @@
+/** ------------------------------------- -->
+/** CSS COMBINATORS
+/** ---------------------------------------- -->
+
+
+
+CSS combinators are used to define relationships between different elements in your HTML document. They allow you to target elements based on their position and hierarchy within the document structure.
+
+
+
+Descendant Selector (Space): Selects an element that is a descendant of another element.
+
+Child Selector (>): Selects an element that is a direct child of another element.
+
+Adjacent Sibling Selector (+): Selects an element that is immediately preceded by another element.
+
+General Sibling Selector (~): Selects all elements that are siblings of another element and share the same parent.
+
+Universal Selector (*): Selects all elements.
+
+
+
+
+
+//----------------------------------------------------------> Descendant Selector (Space): <----------------------------------------------------------//
+
+.div p {
+    color: red;
+}
+
+
+
+//----------------------------------------------------------> Child Selector (>): <----------------------------------------------------------//
+
+ul > p {
+    color: red;
+}
+
+ul > li {
+    color: blue;
+}
+
+<ul>
+    <p>Jenish</p>
+    <li>Unordered item</li>
+    <li>Unordered item
+        <ol>
+            <li>Item 1</li>
+            <li>Item 2</li>
+        </ol>
+    </li>
+</ul>
+
+
+
+//----------------------------------------------------------> Adjacent Sibling Selector (+): <----------------------------------------------------------//
+
+div h1 + p {
+    color: red;
+}
+
+<article>
+    <div>
+        <h1>Section Title</h1>
+        <p>Peregraft - 1</p>
+        <p>Peregraft - 2</p>
+        <p>Peregraft - 3</p>
+        <p>Peregraft - 4</p>
+    </div>
+</article>
+
+
+
+//----------------------------------------------------------> General Sibling Selector (~): <----------------------------------------------------------//
+
+div ~ p {
+    color: red;
+}
+
+
+<article>
+    <div>
+        <h1>Section Title</h1>
+        <p>Peregraft</p>
+        <h1>Section Title</h1>
+        <p>Peregraft</p>
+        <h1>Section Title</h1>
+        <p>Peregraft</p>
+        <h1>Section Title</h1>
+        <p>Peregraft</p>
+    </div>
+</article>
+
+
+//----------------------------------------------------------> Universal Selector (*): <----------------------------------------------------------//
+
+* {
+    color: red;
+}
+
+
+
+
+
+
+
+//----------------------------------------------------------> Simple Project EX: <----------------------------------------------------------//
+Project File :- Combinators_Project.html

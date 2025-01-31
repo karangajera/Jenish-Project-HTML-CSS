@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploring color values in CSS </title>
+    <style>
+        div {
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Exploring color values in HTML, CSS & JavaScript</h1>
+    <div></div>
+    <hr />
+    <!-- Input field -->
+    <label for="color">Enter a valid color value:</label>
+    <input type="text" id="color" />
+
+    <script>
+        // Get the input element and the div element
+        const inputElem = document.querySelector("input");
+        const divElem = document.querySelector("div");
+
+        // Function to check if a color value is valid
+        function validTextColor(stringToTest) {
+            if (stringToTest === "inherit" || stringToTest === "transparent") {
+                return false;
+            }
+
+            // Create a div element with the given color
+            const div = document.createElement("div");
+            div.style.color = stringToTest;
+            return !!div.style.color;
+        }
+
+        // Add an event listener to the input element to update the div element's color
+        inputElem.addEventListener("input", () => {
+            
+            // Check if the input value is a valid color value
+            if (validTextColor(inputElem.value)) {
+                divElem.style.backgroundColor = inputElem.value;
+                divElem.textContent = "";
+            } else {
+                divElem.removeAttribute("style");
+                divElem.textContent = "Invalid color value";
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

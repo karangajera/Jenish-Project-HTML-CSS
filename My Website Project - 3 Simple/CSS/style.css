@@ -1,0 +1,1114 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==============================================
+        Variable Define
+============================================== */
+:root {
+  --heading: rgb(0 10 45);
+  --para: #777777;
+  --para-tint: #e4e4e4;
+  --third: #fff;
+  --helper: #8490ff;
+  --helper-tint: #f3f4ff;
+  --bg: rgb(249 249 255);
+  --gradient: linear-gradient(0deg, rgb(132 144 255) 0%, rgb(98 189 252) 100%);
+  --shadpw: 0px 0px 20px 0px rgb(132 144 255 / 20%);
+  --font-family: "Oswald", serif;
+}
+
+/* spacing  desktop = 4.8rem */
+
+html {
+  /* font-size: 100%; */
+  font-size: 62.5%;
+  /* 62.5% = 10px */
+  /* 1rem = 10px */
+  font-family: var(--font-family);
+  scroll-behavior: smooth;
+}
+body {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* ==============================================
+        Custom Scrollbar
+============================================== */
+
+body {
+  --sb-track-color: #ffffff;
+  --sb-thumb-color: #000a2d;
+  --sb-size: 14px;
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 1px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 1px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
+
+/* ==============================================
+        CSS : Container Design
+============================================== */
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.container-fluid {
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+@media (max-width: 576px) {
+  .container {
+    width: 100%;
+  }
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+.container-fluid {
+  width: 100%;
+}
+
+/* ==============================================
+        Section
+============================================== */
+.section {
+  padding: 9rem 0;
+}
+
+.grid {
+  display: grid;
+  gap: 9rem;
+}
+
+.grid-two-col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-three-col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-four-col {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 400px 180px 180px 1fr;
+}
+
+/* ==============================================
+        Custom CSS : Font Design
+============================================== */
+h1 {
+  /* font-size: 3rem; */
+  font-size: 6.4rem;
+  /* 1rem = 10px */
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.015rem;
+  margin-top: 0.67rem;
+  margin-bottom: 0.67rem;
+  color: var(--heading);
+}
+h2 {
+  font-size: 4.8rem;
+  /* 1rem = 10px */
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.015rem;
+  margin-top: 0rem;
+  margin-bottom: 1.1rem;
+  color: var(--heading);
+}
+h3 {
+  font-size: 2.25rem;
+  /* 1rem = 10px */
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.015rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: var(--heading);
+}
+h4 {
+  font-size: 1.5rem;
+  /* 1rem = 10px */
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.015rem;
+  margin-top: 1.33rem;
+  margin-bottom: 1.33rem;
+  color: var(--heading);
+}
+h5 {
+  font-size: 1.25rem;
+  /* 1rem = 10px */
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.015rem;
+  margin-top: 1.6733rem;
+  margin-bottom: 1.67rem;
+  color: var(--heading);
+}
+h6 {
+  font-size: 1rem;
+  /* 1rem = 10px */
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.015rem;
+  margin-top: 2.33rem;
+  margin-bottom: 2.33rem;
+  color: var(--heading);
+}
+
+p {
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.72;
+  letter-spacing: 0.015rem;
+  color: var(--para);
+}
+
+/* ==============================================
+        Link ( a , li )
+============================================== */
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+/* ==============================================
+        Button
+============================================== */
+.btn {
+  background: -webkit-linear-gradient(
+    0deg,
+    rgb(132 144 255) 0%,
+    rgb(98 189 252) 100%
+  );
+  padding: 1.6rem 3.2rem;
+  border: none;
+  color: rgb(255 255 255);
+  display: inline-block;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  position: relative;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  position: relative;
+}
+.btn:hover {
+  box-shadow: 0px 20px 20px 0px rgb(132 144 255 / 30%);
+  color: rgb(255 255 255);
+}
+
+/* ==============================================
+        Header
+============================================== */
+
+.header {
+  padding: 0 4.8rem;
+  height: 10rem;
+  display: flex;
+  /* position: sticky; */
+  /* top: 0; */
+  justify-content: space-between;
+  align-items: center;
+  /* background: var(--bg); */
+  background: #e3e0e0;
+  z-index: 999;
+}
+
+.header .logo {
+  /* width: 15%; */
+  height: 3rem;
+}
+
+.navbar-lists {
+  display: flex;
+  gap: 4.8rem;
+  list-style: none;
+}
+
+.navbar-link:link,
+.navbar-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  color: #212529;
+  transition: all 0.3s;
+  font-family: var(--font-family);
+}
+
+.navbar-link:hover,
+.navbar-link:active {
+  color: var(--helper);
+}
+
+.mobile-navbar-btn {
+  /* by default for normal screen we want to hide  */
+  display: none;
+  background: transparent;
+  cursor: pointer;
+  border: none;
+}
+
+.mobile-nav-icon {
+  width: 5rem;
+  height: 5rem;
+  color: #212529;
+}
+
+/* for desktop or mobile menu-outline one must be visible and we need to hide the close menu icon */
+.mobile-nav-icon[name="close-outline"] {
+  display: none;
+}
+
+/* sticky Navbar */
+.sticky .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 8rem;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==============================================
+        Hero Section
+============================================== */
+
+.section-hero {
+  background: var(--bg);
+}
+
+.section-hero-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.hero-top-data {
+  text-transform: uppercase;
+  color: var(--heading);
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: var(--helper);
+}
+
+.hero-heading {
+  font-weight: 800;
+  /* text-transform: uppercase; */
+  /* font-size: 6.4rem; */
+}
+
+.hero-para {
+  margin-top: 1.5rem;
+  margin-bottom: 5rem;
+  max-width: 60rem;
+}
+
+.section-hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-img {
+  max-width: 80%;
+  z-index: 1;
+}
+
+/* ==============================================
+        Bio Data Section Start 
+============================================== */
+
+.bio-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bio-image img {
+  display: inline-block;
+  width: 80%;
+  box-shadow: -2rem -2rem 0rem 0rem var(--helper);
+}
+
+.common-heading {
+  font-size: 4.8rem;
+  font-weight: 700;
+  margin-bottom: 6rem;
+  text-transform: capitalize;
+  position: relative;
+}
+
+.common-heading::before {
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  /* border-radius: 50%; */
+  background: var(--helper);
+}
+
+.common-heading::after {
+  content: "";
+  position: absolute;
+  top: 128%;
+  left: 1.5rem;
+  width: 30%;
+  height: 0.3rem;
+  background: var(--helper);
+}
+
+.bio-data-stats {
+  padding: 6.4rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.bio-data-stats h3 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.bio-progress-bar {
+  position: relative;
+  width: 90%;
+  height: 0.8rem;
+  background-color: rgb(233 236 239);
+  box-shadow: var(--shadpw);
+  /* border-radius: 10rem; */
+  /* background: var(--para); */
+  /* overflow: hidden; */
+}
+
+.bio-progress-bar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: inherit;
+  background: -webkit-linear-gradient(
+    0deg,
+    rgb(132 144 255) 0%,
+    rgb(98 189 252) 100%
+  );
+  /* border-radius: 10rem; */
+}
+
+.bio-progress-1::before {
+  width: 80%;
+}
+.bio-progress-2::before {
+  width: 99%;
+}
+.bio-progress-3::before {
+  width: 90%;
+}
+.bio-progress-4::before {
+  width: 85%;
+}
+.bio-progress-5::before {
+  width: 70%;
+}
+
+/* to create the rectangle box  */
+.bio-progress-bar span {
+  position: absolute;
+  top: 1.8rem;
+  left: 76%;
+  width: 4rem;
+  height: 2rem;
+  background: var(--helper);
+  color: var(--third);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+}
+
+/* to create the traingle or caret symbol  */
+.bio-progress-bar span::after {
+  content: "";
+  position: absolute;
+  top: -1.6rem;
+  width: 0rem;
+  height: 0rem;
+  border: 0.8rem solid var(--helper);
+  border-color: transparent;
+  border-bottom-color: var(--helper);
+}
+
+.bio-progress-1 span {
+  left: 76%;
+}
+.bio-progress-2 span {
+  left: 95%;
+}
+.bio-progress-3 span {
+  left: 86%;
+}
+.bio-progress-4 span {
+  left: 81%;
+}
+.bio-progress-5 span {
+  left: 66%;
+}
+
+/* ==============================================
+        Portfolio works Section Start 
+============================================== */
+
+.section-portfolio {
+  background-color: var(--bg);
+}
+
+.section-portfolio p,
+.section-services p {
+  max-width: 60rem;
+}
+
+.p-btns {
+  margin-top: 6.4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3.2rem;
+}
+
+.p-btn-active {
+  transform: translateY(-1rem);
+}
+
+.p-image-not-active {
+  display: none;
+}
+
+.portfolio-images {
+  gap: 3.2rem;
+  margin-top: 6.4rem;
+}
+
+.img-ovelay {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-images img {
+  width: 100%;
+  border-radius: 7px;
+  position: relative;
+  overflow: hidden;
+}
+
+.img-ovelay .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-linear-gradient(
+    0deg,
+    rgb(132 144 255) 0%,
+    rgb(98 189 252) 100%
+  );
+  opacity: 0;
+  color: var(--third);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(100%);
+  transition: all 0.3s linear;
+  border-radius: 7px;
+  /* box-shadow: inset 0 0 0 0.5rem var(--helper-tint); */
+}
+
+.img-ovelay:hover > .overlay {
+  opacity: 0.9;
+  transform: translateY(0);
+  cursor: pointer;
+}
+
+.img-ovelay .overlay .common-heading {
+  margin: 0;
+  color: var(--third);
+  text-decoration: none;
+}
+
+/* ==============================================
+        work data Section
+============================================== */
+.section-work-data {
+  background: -webkit-linear-gradient(
+    0deg,
+    rgb(132 144 255) 0%,
+    rgb(98 189 252) 100%
+  );
+  color: var(--third);
+  text-align: center;
+}
+
+.common-numbers {
+  font-size: 4.8rem;
+}
+
+.section-work-data p {
+  color: var(--third);
+  text-transform: capitalize;
+}
+
+/* ===========================================
+      Services Section
+======================================= */
+.section-services p {
+  max-width: 60rem;
+}
+
+.section-services .grid {
+  margin-top: 10rem;
+  row-gap: 4rem;
+  column-gap: 4rem;
+}
+
+.service-box {
+  text-align: center;
+  /* box-shadow: var(--shadpw); */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  border-radius: 5px;
+  padding: 6.4rem 3.4rem;
+  transition: all 0.2s linear;
+}
+.service-box:hover {
+  transform: translateY(-1rem);
+}
+
+.service-icon {
+  width: 6rem;
+  height: 6rem;
+  background-color: rgb(144 172 209 / 20%);
+  display: inline-block;
+  border-radius: 56% 44% 70% 30% / 30% 54% 46% 70%;
+  padding: 1.4rem 1.8rem;
+  position: relative;
+  color: var(--heading);
+  animation: water-wave 3s linear infinite;
+}
+.service-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* border: 1px solid rgba(11, 15, 20, 0.9); */
+  width: 90%;
+  height: 90%;
+  /* border-radius: 56% 44% 70% 30% / 30% 54% 46% 70%; */
+  background-color: transparent;
+  animation: water-wave 5s linear infinite alternate;
+}
+/* @keyframes water-wave {
+  0% {
+    border-radius: 56% 44% 70% 30% / 30% 54% 46% 70%;
+  }
+  50% {
+    border-radius: 3% 97% 15% 85% / 72% 0% 100% 28%;
+  }
+  100% {
+    border-radius: 56% 44% 70% 30% / 30% 54% 46% 70%;
+  }
+} */
+
+.service-box h3 {
+  text-transform: capitalize;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* ===========================================
+      Resume Section
+======================================= */
+.section-resume {
+  background: var(--bg);
+}
+
+.resume-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.resume-img img {
+  width: 80%;
+  box-shadow: -2rem 2rem 0 0 var(--helper);
+  /* box-shadow: var(--shadpw) */
+}
+
+.resume-para {
+  font-size: 2.4rem;
+  letter-spacing: 0;
+  text-transform: capitalize;
+  color: var(--heading);
+}
+
+.resume-data-subsection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4.8rem;
+  margin-top: 4.4rem;
+  padding-bottom: 2.4rem;
+  border-bottom: 1px solid var(--para-tint);
+}
+
+.resume-data-left .grid {
+  gap: 1.5rem;
+}
+
+.resume-data-left .grid p,
+.resume-data-right p {
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.resume-data-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.resume-data-right .resume-data-button {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: var(--helper);
+  padding: 0.3rem 0;
+  min-width: 50%;
+  background: #f3f4ff;
+  border-radius: 10rem;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.resume-data-bottom-subsection {
+  margin-top: 4.8rem;
+}
+
+.resume-data-bottom-subsection .margin-small {
+  margin-top: 1.8rem;
+}
+
+.resume-data-bottom-subsection .resume-data-button {
+  width: 80%;
+}
+
+/* ===========================================
+    Testimonial Swiper Queries Section
+======================================= */
+
+.section-testimonial {
+  background-color: var(--bg);
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  margin-top: 9rem;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  /* background: #fff; */
+
+  /* Center slide text vertically */
+  flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.swiper-client-msg {
+  padding: 5rem 8rem;
+  background-color: var(--third);
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: var(--shadpw);
+  position: relative;
+}
+
+.swiper-client-msg::before {
+  content: "";
+  position: absolute;
+  bottom: -10rem;
+  left: 50%;
+  transform: translateX(-50%);
+  /* width: 5rem;
+  height: 5rem; */
+  border: 5rem solid var(--third);
+  border-color: transparent;
+  border-top-color: var(--third);
+}
+
+.swiper-client-msg p::before {
+  content: "\f10d";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 2rem;
+  font-size: 5rem;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: #ced3ff;
+}
+
+.swiper-client-msg p::after {
+  /* display: inline-block */
+  content: "\f10e";
+  position: absolute;
+  bottom: 0%;
+  right: 5%;
+  font-size: 5rem;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  color: #ced3ff;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-client-data {
+  align-items: center;
+  justify-items: start;
+  justify-content: start;
+  gap: 1.4rem;
+  margin-top: 3.2rem;
+}
+
+.swiper-client-data img {
+  max-width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  border: 0.5rem solid #ced3ff;
+}
+
+.swiper-client-data p:first-child {
+  font-weight: bold;
+  color: var(--heading);
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--sb-thumb-color) !important;
+}
+
+
+
+/* ===========================================
+    freelancer  Section
+======================================= */
+.section-freelancer {
+  background-image: url("../images/folio/3.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  text-align: center;
+  position: relative;
+  background-attachment: fixed;
+}
+
+.section-freelancer .overlay {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #3e64ff;
+  opacity: 0.7;
+}
+
+.section-freelancer .container {
+  position: relative;
+}
+
+.section-freelancer h2 {
+  font-size: 5.4rem;
+}
+
+.section-freelancer h2 span {
+  color: #a0f669;
+}
+
+.section-freelancer h2,
+.section-freelancer p {
+  color: var(--third);
+  margin-bottom: 1.8rem;
+}
+
+/* ===========================================
+    contact Section
+======================================= */
+
+.section-contact-main {
+  /* max-width: 70rem; */
+  /* margin: 0 auto; */
+  margin-top: 10rem;
+}
+
+.section-contact-main form {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.section-contact-main .grid {
+  gap: 2.4rem;
+}
+
+.section-contact-main input,
+textarea {
+  padding: 1.5rem 2rem;
+  border: 0.1rem solid #c9c9c9;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 1.6rem;
+  font-family: var(--font-family);
+}
+
+.section-contact-main textarea {
+  height: 15rem;
+}
+
+::placeholder {
+  font-size: 1.6rem;
+  font-family: var(--font-family);
+}
+
+.section-contact-main input[type="submit"] {
+  max-width: 30%;
+  border: none;
+}
+
+.contact_image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact_image img {
+  display: inline-block;
+  width: 80%;
+  box-shadow: -2rem -2rem 0rem 0rem var(--helper);
+}
+
+
+
+/* ===========================================
+Footer Section
+======================================= */
+
+.section-footer {
+  background: var(--heading);
+}
+
+/* .section-footer h3 {
+  color: var(--third);
+  margin-bottom: 4rem;
+} */
+
+.section-footer img {
+  margin-bottom: 1rem;
+}
+
+.f-about p {
+  color: #adadad;
+}
+
+.f-links ul,
+.f-services ul,
+.f-address address {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  justify-content: center;
+  list-style: none;
+}
+
+.f-links li,
+.f-links a,
+.f-services li,
+.f-services a {
+  font-size: 1.8rem;
+  color: #adadad;
+  text-transform: capitalize;
+}
+
+.f-links span,
+.f-services span,
+.f-address span {
+  margin-right: 1rem;
+  transition: all 0.6s linear;
+}
+
+.f-address p {
+  font-style: normal;
+  color: #adadad;
+}
+.f-address address p a {
+  color: #adadad;
+  transition: all 0.6s linear;
+}
+
+.f-social-icons {
+  margin: 5rem 0;
+  text-align: center;
+  color: #adadad;
+}
+
+.f-social-icons .icons {
+  width: 4rem;
+  height: 4rem;
+  background-color: rgb(144 172 209 / 20%);
+  display: inline-block;
+  padding: 1.4rem 1.8rem;
+  position: relative;
+  color: var(--heading);
+  animation: water-wave 3s linear infinite;
+  color: var(--third);
+}
+
+.f-credits p {
+  text-align: center;
+  color: #adadad;
+}
+
+footer a:hover,
+address p a:hover {
+  color: var(--third);
+}
+
+
+
+
+/* ===========================================
+    Scroll To Top Functionality
+======================================= */
+
+.scrolltop-style {
+  position: fixed;
+  right: 2%;
+  bottom: 3%;
+  z-index: 9999;
+}
+
+.scroll-top {
+  width: 2rem;
+  height: 2rem;
+  background: var(--helper);
+  display: inline-block;
+  padding: 1.4rem 1.8rem;
+  color: var(--sb-track-color);
+  position: relative;
+  animation: water-wave 3s linear infinite;
+  cursor: pointer;
+  border-radius: 50%;
+}

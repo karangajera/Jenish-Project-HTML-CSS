@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
+            -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important;
+        }
+
+        :root {
+            --blue: #0174be;
+            --white: #f9f9f9;
+            --block: #191919;
+        }
+
+        body,
+        button {
+            font-family: 'Rubik', sans-serif;
+        }
+
+        header {
+            background: var(--block);
+            height: 80px;
+        }
+
+        .menu-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1140px;
+            margin: 0 auto;
+            gap: 20px;
+            width: 90%;
+            height: 100%;
+            position: relative;
+        }
+
+        .logo h2 {
+            color: var(--white);
+        }
+
+        .menu-items {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-menu ul {
+            list-style: none;
+        }
+
+        .nav-link {
+            display: inline-block;
+        }
+
+        .nav-link a {
+            font-size: 14px;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--white);
+            padding: 30px 10px;
+            font-weight: 500;
+            transition: 0.3s ease-in-out;
+        }
+
+        .nav-link a:hover {
+            color: var(--blue);
+        }
+
+        .contact-btn {
+            background: var(--blue);
+            color: var(--white);
+            padding: 10px 16px;
+            border: none;
+            border-radius: 20px;
+            font-weight: 400;
+            transition: 0.3s ease-in-out;
+        }
+
+        .contact-btn:hover {
+            cursor: pointer;
+            background: var(--white);
+            color: var(--blue);
+        }
+
+
+        /* Toggle Button  */
+        .toggle {
+            display: none;
+            position: absolute;
+            right: 0;
+        }
+
+        .menu-icon {
+            width: 20px;
+            height: 20px;
+            position: relative;
+            cursor: pointer;
+            /* background: red; */
+        }
+
+        .menu-icon span {
+            background: var(--white);
+            width: 100%;
+            height: 2px;
+            border-radius: 4px;
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform 0.5s width 0.5s, opacity 0.5s;
+        }
+
+        .menu-icon .top {
+            transform: translate(-50%, -8px);
+        }
+
+        .menu-icon .end {
+            transform: translate(-50%, 6px);
+        }
+
+        .active .top {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+
+        .active .end {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        .active .middle {
+            width: 0;
+            opacity: 0;
+        }
+
+
+        /* Media Queries */
+        @media (max-width: 700px) {
+            .toggle {
+                display: block;
+                padding: 30px;
+            }
+
+            .menu-container {
+                padding: 0 30px;
+                width: 100%;
+            }
+
+            .menu-items {
+                visibility: hidden;
+                opacity: 0;
+            }
+
+            .active .menu-items {
+                visibility: visible;
+                position: absolute;
+                opacity: 1;
+                top: 100%;
+                left: 0;
+                flex-direction: column;
+                align-items: start;
+                width: 100%;
+                background: var(--block);
+                border-top: 1px solid #393939;
+                padding: 30px;
+                transition: opacity 0.2s ease-in;
+            }
+
+            .nav-menu {
+                width: 100%;
+            }
+
+            .nav-link {
+                display: block;
+            }
+
+            .nav-link a {
+                display: block;
+                padding: 18px 0;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="menu-container">
+            <div class="logo">
+                <h2>Jenish</h2>
+            </div>
+            <div class="menu-items">
+                <nav class="nav-menu">
+                    <ul>
+                        <li class="nav-link"><a href="#">Home</a></li>
+                        <li class="nav-link"><a href="#">Project</a></li>
+                        <li class="nav-link"><a href="#">Blog</a></li>
+                        <li class="nav-link"><a href="#">Abot</a></li>
+                    </ul>
+                </nav>
+                <div class="button">
+                    <button class="contact-btn">Contact Me</button>
+                </div>
+            </div>
+            <div class="toggle">
+                <div class="menu-icon">
+                    <span class="top"></span>
+                    <span class="middle"></span>
+                    <span class="end"></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <h1>Responsive Navigations Bar - HTML, CSS & JavaScript</h1>
+    </section>
+
+
+
+</body>
+
+<script>
+    const header = document.querySelector(".main-header");
+    const toggleBtn = document.querySelector(".menu-icon");
+
+    toggleBtn.addEventListener("click", (e) => {
+        header.classList.toggle("active");
+    })
+</script>
+
+</html>
