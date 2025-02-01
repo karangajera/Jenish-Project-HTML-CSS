@@ -25,12 +25,15 @@
 /* spacing  desktop = 4.8rem */
 
 html {
-  /* font-size: 100%; */
-  font-size: 62.5%;
-  /* 62.5% = 10px */
-  /* 1rem = 10px */
-  font-family: var(--font-family);
+  /*font-size: 100%;
+  */font-size: 62.5%;
+  /*62.5%=10px*//*1rem=10px*/font-family: var(--font-family);
   scroll-behavior: smooth;
+  transition: all 0.6 linear;
+  -webkit-transition: all 0.6 linear;
+  -moz-transition: all 0.6 linear;
+  -ms-transition: all 0.6 linear;
+  -o-transition: all 0.6 linear;
 }
 body {
   overflow-x: hidden;
