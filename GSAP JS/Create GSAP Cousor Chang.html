@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            /* background-color: #000000; */
+        }
+
+        #main {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #cousor {
+            height: 22px;
+            width: 22px;
+            background-color: green;
+            border-radius: 50%;
+            position: fixed;
+            font-size: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            z-index: 9;
+        }
+
+        #image {
+            height: 30vw;
+            width: 70vw;
+            background-color: red;
+            position: relative;
+        }
+
+        #image img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        #overlay {
+            background-color: transparent;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="cousor"></div>
+    <div id="main">
+        <div id="image">
+            <div id="overlay"></div>
+            <img
+                src="https://images.unsplash.com/photo-1735864203060-012cbfbdb3a4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+        </div>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.6/gsap.min.js"
+    integrity="sha512-3jR54KUJhy12PapCSrnf9gBMPxBBI5mL1TFVSI6rerJ1GSYqu1CDdVzpEJxW1hzMxIker92DbK8MU7bt3kStMA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+    const body = document.querySelector("body");
+    const cursor = document.querySelector("#cousor");
+    const image_div = document.querySelector("#image");
+
+    body.addEventListener("mousemove", function (dets) {
+        gsap.to(cursor, {
+            x: dets.x,
+            y: dets.y,
+            // scale: 1,
+            duration: 1,
+            ease: "back.out"
+        });
+    });
+
+    image_div.addEventListener("mouseenter", function () {
+        cursor.innerHTML = "View More";
+        gsap.to(cursor, {
+            scale: 4,
+            backgroundColor: "#ffffff5c"
+        })
+    })
+    image_div.addEventListener("mouseleave", function () {
+        cursor.innerHTML = "";
+        gsap.to(cursor, {
+            scale: 1,
+            backgroundColor: "green"
+        })
+    })
+</script>
+
+</html>

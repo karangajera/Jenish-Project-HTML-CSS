@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create GSAP ScrollTrigger Horizontal Scroll </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            /* background-color: #000000; */
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        #page1 {
+            width: 100%;
+            height: 100%;
+            background-color: burlywood;
+        }
+
+        #page2 {
+            width: 100%;
+            height: 100%;
+            background-color: chocolate;
+            padding: 5vw 0;
+        }
+
+        #page3 {
+            width: 100%;
+            height: 100%;
+            background-color: cornflowerblue;
+        }
+
+        #page2 h1 {
+            font-size: 40vw;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="page1"></div>
+    <div id="page2">
+        <h1>Shaddocck</h1>
+    </div>
+    <div id="page3"></div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js"
+        integrity="sha512-f6bQMg6nkSRw/xfHw5BCbISe/dJjXrVGfz9BSDwhZtiErHwk7ifbmBEtF9vFW8UNIQPhV2uEFVyI/UHob9r7Cw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js"
+        integrity="sha512-AcqPGqrrAEtEwe+ADO5R8RbdFi7tuU7b/A2cJJH0Im0D18NRk5p5s4B3E5PMuO81KFw0ClN7J5SHVUJz7KOb0A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        gsap.to("#page2 h1", {
+            transform: "translateX(-120%)",
+            scrollTrigger: {
+                trigger: "#page2",
+                scroller: "body",
+                markers: true,
+                start: "top 0%",
+                end: "top -120%",
+                scrub: true,
+                pin: true,
+            }
+        })
+    </script>
+</body>
+
+</html>
